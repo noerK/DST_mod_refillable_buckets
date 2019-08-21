@@ -55,28 +55,38 @@ AddPrefabPostInit("fertilizer", function(inst)
 end)
 
 AddPrefabPostInit("poop", function(inst)
-    inst:AddComponent("refiller")
-    inst.components.refiller.refill_value = 5 * multiplier_poop
+    if multiplier_poop > 0 then
+        inst:AddComponent("refiller")
+        inst.components.refiller.refill_value = 5 * multiplier_poop
+    end
 end)
 
 AddPrefabPostInit("guano", function(inst)
-    inst:AddComponent("refiller")
-    inst.components.refiller.refill_value = 7.5 * multiplier_guano
+    if multiplier_guano > 0 then
+        inst:AddComponent("refiller")
+        inst.components.refiller.refill_value = 7.5 * multiplier_guano
+    end
 end)
 
 AddPrefabPostInit("spoiled_food", function(inst)
-    inst:AddComponent("refiller")
-    inst.components.refiller.refill_value = 1.25 * multiplier_spoiled_food
+    if multiplier_spoiled_food > 0 then
+        inst:AddComponent("refiller")
+        inst.components.refiller.refill_value = 1.25 * multiplier_spoiled_food
+    end
 end)
 
 AddPrefabPostInit("rottenegg", function(inst)
-    inst:AddComponent("refiller")
-    inst.components.refiller.refill_value = 1.25 * multiplier_rotten_egg
+    if multiplier_rotten_egg > 0 then
+        inst:AddComponent("refiller")
+        inst.components.refiller.refill_value = 1.25 * multiplier_rotten_egg
+    end
 end)
 
 AddPrefabPostInit("glommerfuel", function(inst)
-    inst:AddComponent("refiller")
-    inst.components.refiller.refill_value = 5 * multiplier_glommer_fuel
+    if multiplier_glommer_fuel then
+        inst:AddComponent("refiller")
+        inst.components.refiller.refill_value = 5 * multiplier_glommer_fuel
+    end
 end)
 
 
